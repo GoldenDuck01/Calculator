@@ -1,0 +1,91 @@
+public class Programm()
+    {
+        public static void Main(string[] args)
+        {
+            Programm main = new();
+            main.chooseMode();
+
+        }
+
+        public void chooseMode()
+        {
+            System.Console.WriteLine("Choose to either add,subtract,multiply or divide two numbers!");
+
+            string? decision = Console.ReadLine();
+
+            switch (decision)
+            {
+                case "addition" or "add" or "a":
+                    Console.WriteLine("Addition chosen!");
+                    System.Console.WriteLine();
+                    Addition();
+                    break;
+                case "subtraction" or "subtract" or "s":
+                    Console.WriteLine("Subtraction chosen!");
+                    System.Console.WriteLine();
+                    Subtraction();
+                    break;
+                case "multiplication" or "multiply" or "m":
+                    Console.WriteLine("Mulitplikation chosen!");
+                    System.Console.WriteLine();
+                    Mulitplication();
+                    break;
+                case "division" or "divide" or "d":
+                    Console.WriteLine("Division chosen!");
+                    System.Console.WriteLine();
+                    Division();
+                    break;
+                default:
+                    System.Console.WriteLine("Not an option!");
+                    break;
+            }
+        }
+
+        public void Addition()
+        {
+            System.Console.WriteLine("First, say the amount of numbers you want to add together!");
+
+            if (int.TryParse(Console.ReadLine(), out int amountNumbers))
+            {
+                double[] numbers = new double[amountNumbers];
+
+                for (int i = 0; i < amountNumbers; i++)
+                {
+                    System.Console.WriteLine($"Zahl: {i + 1}");
+
+                    while (!double.TryParse(Console.ReadLine(), out numbers[i]))
+                    {
+                        Console.WriteLine("Input not valid!");
+                    }
+                }
+
+                double sum = 0;
+
+                foreach (double num in numbers)
+                {
+                    sum += num;
+                }
+
+                System.Console.WriteLine($"Summe: {sum}");
+            }
+            else
+            {
+                System.Console.WriteLine("Ungültige Eingabe!");
+            }
+        }
+
+        public void Subtraction()
+        {
+            System.Console.WriteLine("Subtraction");
+        }
+
+        public void Mulitplication()
+        {
+            System.Console.WriteLine("Multiplication");
+        }
+
+        public void Division()
+        {
+            System.Console.WriteLine("Division");
+        }
+    }

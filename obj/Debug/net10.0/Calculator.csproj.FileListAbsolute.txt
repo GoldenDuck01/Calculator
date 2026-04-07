@@ -1,0 +1,14 @@
+/Users/felixkunze/Freizeit/Coding/VS_Code/CSharp/Calculator/bin/Debug/net10.0/Calculator
+/Users/felixkunze/Freizeit/Coding/VS_Code/CSharp/Calculator/bin/Debug/net10.0/Calculator.deps.json
+/Users/felixkunze/Freizeit/Coding/VS_Code/CSharp/Calculator/bin/Debug/net10.0/Calculator.runtimeconfig.json
+/Users/felixkunze/Freizeit/Coding/VS_Code/CSharp/Calculator/bin/Debug/net10.0/Calculator.dll
+/Users/felixkunze/Freizeit/Coding/VS_Code/CSharp/Calculator/bin/Debug/net10.0/Calculator.pdb
+/Users/felixkunze/Freizeit/Coding/VS_Code/CSharp/Calculator/obj/Debug/net10.0/Calculator.GeneratedMSBuildEditorConfig.editorconfig
+/Users/felixkunze/Freizeit/Coding/VS_Code/CSharp/Calculator/obj/Debug/net10.0/Calculator.AssemblyInfoInputs.cache
+/Users/felixkunze/Freizeit/Coding/VS_Code/CSharp/Calculator/obj/Debug/net10.0/Calculator.AssemblyInfo.cs
+/Users/felixkunze/Freizeit/Coding/VS_Code/CSharp/Calculator/obj/Debug/net10.0/Calculator.csproj.CoreCompileInputs.cache
+/Users/felixkunze/Freizeit/Coding/VS_Code/CSharp/Calculator/obj/Debug/net10.0/Calculator.dll
+/Users/felixkunze/Freizeit/Coding/VS_Code/CSharp/Calculator/obj/Debug/net10.0/refint/Calculator.dll
+/Users/felixkunze/Freizeit/Coding/VS_Code/CSharp/Calculator/obj/Debug/net10.0/Calculator.pdb
+/Users/felixkunze/Freizeit/Coding/VS_Code/CSharp/Calculator/obj/Debug/net10.0/Calculator.genruntimeconfig.cache
+/Users/felixkunze/Freizeit/Coding/VS_Code/CSharp/Calculator/obj/Debug/net10.0/ref/Calculator.dll
