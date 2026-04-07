@@ -12,3 +12,4 @@
 /Users/felixkunze/Freizeit/Coding/VS_Code/CSharp/Calculator/obj/Debug/net10.0/Calculator.pdb
 /Users/felixkunze/Freizeit/Coding/VS_Code/CSharp/Calculator/obj/Debug/net10.0/Calculator.genruntimeconfig.cache
 /Users/felixkunze/Freizeit/Coding/VS_Code/CSharp/Calculator/obj/Debug/net10.0/ref/Calculator.dll
+/Users/felixkunze/Freizeit/Coding/VS_Code/CSharp/Calculator/obj/Debug/net10.0/Calculator.sourcelink.json

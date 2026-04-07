@@ -15,13 +15,25 @@ namespace Calculator
 
         public void Start()
         {
+            string logo = @"                                                                                                                                                          
+  /$$$$$$            /$$                     /$$             /$$                        
+ /$$__  $$          | $$                    | $$            | $$                        
+| $$  \__/  /$$$$$$ | $$  /$$$$$$$ /$$   /$$| $$  /$$$$$$  /$$$$$$    /$$$$$$   /$$$$$$ 
+| $$       |____  $$| $$ /$$_____/| $$  | $$| $$ |____  $$|_  $$_/   /$$__  $$ /$$__  $$
+| $$        /$$$$$$$| $$| $$      | $$  | $$| $$  /$$$$$$$  | $$    | $$  \ $$| $$  \__/
+| $$    $$ /$$__  $$| $$| $$      | $$  | $$| $$ /$$__  $$  | $$ /$$| $$  | $$| $$      
+|  $$$$$$/|  $$$$$$$| $$|  $$$$$$$|  $$$$$$/| $$|  $$$$$$$  |  $$$$/|  $$$$$$/| $$      
+ \______/  \_______/|__/ \_______/ \______/ |__/ \_______/   \___/   \______/ |__/                                                                          
+            ";
             Console.Clear();
-
+            System.Console.WriteLine(logo);
+            System.Console.WriteLine();
             System.Console.WriteLine("Type in your equasion under here!");
             System.Console.WriteLine();
             System.Console.WriteLine("If you need help using this Calculator write help instead of your equasion!");
             System.Console.WriteLine();
             System.Console.WriteLine("Type exit if you want to end the Calculator!");
+            System.Console.WriteLine();
 
             string? input = Console.ReadLine();
 
@@ -29,6 +41,8 @@ namespace Calculator
             {
                 case "help":
                     Console.Clear();
+                    System.Console.WriteLine(logo);
+                    System.Console.WriteLine();
                     System.Console.WriteLine("Seems like you need some Help ;)");
                     System.Console.WriteLine("Its easy, just write your equasion almost like you would normaly!");
                     System.Console.WriteLine();
@@ -51,6 +65,7 @@ namespace Calculator
 
                 default:
                     System.Console.WriteLine("Seems like you misstyped something there, try again!");
+                    Start();
                     break;
             }
         }
