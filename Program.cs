@@ -7,15 +7,7 @@ namespace Calculator
 {
     public class Programm()
     {
-        public static void Main()
-        {
-            Programm main = new();
-            main.Start();
-        }
-
-        public void Start()
-        {
-            string logo = @"                                                                                                                                                          
+        string logo = @"                                                                                                                                                          
   /$$$$$$            /$$                     /$$             /$$                        
  /$$__  $$          | $$                    | $$            | $$                        
 | $$  \__/  /$$$$$$ | $$  /$$$$$$$ /$$   /$$| $$  /$$$$$$  /$$$$$$    /$$$$$$   /$$$$$$ 
@@ -25,6 +17,34 @@ namespace Calculator
 |  $$$$$$/|  $$$$$$$| $$|  $$$$$$$|  $$$$$$/| $$|  $$$$$$$  |  $$$$/|  $$$$$$/| $$      
  \______/  \_______/|__/ \_______/ \______/ |__/ \_______/   \___/   \______/ |__/                                                                          
             ";
+
+        string helpText = @"
+    Seems like you need some Help!
+    Its easy, just write your equasion almost like you would normaly!
+    Type in a Number like 3 or any other number and then type in a Operator like + or - for example
+
+    Here is every possible Operator:
+
+    + for Addition
+    - for Subtraction
+    * for Multiplication
+    / for Division
+    This is an example of how a Equation should look like: 1 + 1 + 3
+
+    Thats it! Hope you now know how to use this Calculator!
+    Press any Key to return to the Beginning
+            ";
+
+
+        public static void Main()
+        {
+            Programm main = new();
+            main.Start();
+        }
+
+        public void Start()
+        {
+
             Console.Clear();
             System.Console.WriteLine(logo);
             System.Console.WriteLine();
@@ -37,38 +57,25 @@ namespace Calculator
 
             string? input = Console.ReadLine();
 
-            switch (input)
+            if (input == "help")
             {
-                case "help":
-                    Console.Clear();
-                    System.Console.WriteLine(logo);
-                    System.Console.WriteLine();
-                    System.Console.WriteLine("Seems like you need some Help ;)");
-                    System.Console.WriteLine("Its easy, just write your equasion almost like you would normaly!");
-                    System.Console.WriteLine();
-                    System.Console.WriteLine("Type in a Number like 3 or any other number and then type in a Operator like + or - for example");
-                    System.Console.WriteLine("Heres every possible Operator:");
-                    System.Console.WriteLine("+ for Addition");
-                    System.Console.WriteLine("- for Subtraction");
-                    System.Console.WriteLine("* for Multiplication");
-                    System.Console.WriteLine("/ for Division");
-                    System.Console.WriteLine();
-                    System.Console.WriteLine("Thats it! Hope you now know how to use this Calculator!");
-                    System.Console.WriteLine("Press any Key to return to the Beginning");
-                    Console.ReadKey();
-                    Start();
-                    break;
+                Console.Clear();
+                System.Console.WriteLine(logo);
+                System.Console.WriteLine(helpText);
+                Console.ReadKey();
+                Start();
+            }
+            if (input == "exit")
+            {
+                Environment.Exit(0);
+            }
 
-                case "exit":
-                    Environment.Exit(0);
-                    break;
+            string[] tokens = input.Split(" ");
 
-                default:
-                    System.Console.WriteLine("Seems like you misstyped something there, try again!");
-                    Start();
-                    break;
+            for (int i = 0; i < tokens.Length; i++)
+            {
+
             }
         }
-
     }
 }
