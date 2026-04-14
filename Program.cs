@@ -2,6 +2,10 @@
 // Made by GoldenDuck, startet on 07.04.2026
 using System;
 using System.Collections;
+using System.ComponentModel;
+using System.IO.Pipelines;
+using System.Linq;
+using System.Runtime.CompilerServices;
 
 namespace Calculator
 {
@@ -70,12 +74,110 @@ namespace Calculator
                 Environment.Exit(0);
             }
 
-            string[] tokens = input.Split(" ");
+            List<string> equasion = input.Split(" ").ToList();
 
-            for (int i = 0; i < tokens.Length; i++)
+            double result = 0;
+
+            for (int i = 0; i < equasion.Count; i++)
             {
+                if (equasion[i] == "*" || equasion[i] == "/")
+                {
+                    double before = double.Parse(equasion[i - 1]);
+                    double after = double.Parse(equasion[i + 1]);
 
+                    if (equasion[i] == "*")
+                    {
+                        result = before * after;
+                    }
+                    else
+                    {
+                        result = before / after;
+                    }
+
+                    equasion[i - 1] = result.ToString();
+                    equasion.RemoveAt(i); // Erst der Operator also * oder / 
+                    equasion.RemoveAt(i); // Dann folgt jetzt bei i die andere Zahl
+
+                    i = -1; // Damit i beim nächstem Loop 0 wird
+                }
+            }
+
+            result = double.Parse(equasion[0]);
+
+            for (int i = 1; i < equasion.Count; i += 2)
+            {
+                double before = double.Parse(equasion[i - 1]);
+                double after = double.Parse(equasion[i + 1]);
+
+                if (equasion[i] == "+")
+                {
+                    result = before + after;
+                }
+                else
+                {
+                    result = before - after;
+                }
+            }
+
+            System.Console.WriteLine($"The Answer is: {result}");
+            System.Console.WriteLine("");
+            System.Console.WriteLine("Would you like to calculate another equasion?");
+            System.Console.WriteLine("Type yes for another one or no to exit");
+
+            InputMethodAfterEquasion();
+        }
+
+        void InputMethodAfterEquasion()
+        {
+            string? inputAfterEquasion = Console.ReadLine();
+
+            switch (inputAfterEquasion)
+            {
+                case "yes":
+                    Start();
+                    break;
+                case "no":
+                    Environment.Exit(0);
+                    break;
+                default:
+                    System.Console.WriteLine("Sorry you must have typed something wrong!");
+                    System.Console.WriteLine("Try again!");
+                    InputMethodAfterEquasion();
+                    break;
             }
         }
     }
 }
+
+/*
+ String?[] equasion = input.Split(" ");
+
+            double result = 0;
+
+            for (int i = 0; i < equasion.Length; i++)
+            {
+
+                if ((equasion[i] == "*" || equasion[i] == "/") && i > 0 && i < equasion.Length - 1)
+                {
+                    double before = double.Parse(equasion[i - 1]);
+
+                    double after = double.Parse(equasion[i + 1]);
+
+
+                    switch (equasion[i])
+                    {
+                        case "*":
+                            result = before * after;
+                            break;
+                        case "/":
+                            result = before / after;
+                            break;
+                        default:
+                            System.Console.WriteLine("Seems like something went wrong!");
+                            break;
+                    }
+                }
+            }
+
+            System.Console.WriteLine(result);
+*/
